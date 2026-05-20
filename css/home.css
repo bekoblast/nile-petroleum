@@ -10,7 +10,7 @@
     align-items: center;
     background:
         linear-gradient(120deg, rgba(10,20,56,0.92) 0%, rgba(42,40,130,0.78) 50%, rgba(10,20,56,0.55) 100%),
-        url('https://images.unsplash.com/photo-1605086648815-d6e3c2adb46d?w=1920&q=80') center/cover no-repeat;
+        url('https://images.unsplash.com/photo-1473773508845-188df298d2d1?w=1920&q=80') center/cover no-repeat;
     color: var(--np-white);
     overflow: hidden;
 }
