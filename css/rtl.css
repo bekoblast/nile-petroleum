@@ -1,0 +1,153 @@
+/* ==========================================================================
+   RTL & Arabic typography overrides
+   Activated when <html dir="rtl"> (and body.lang-ar)
+   ========================================================================== */
+
+html[dir="rtl"] body {
+    font-family: 'Cairo', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    text-align: right;
+}
+
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6 {
+    font-family: 'Cairo', 'Inter', sans-serif;
+    letter-spacing: 0;
+    line-height: 1.35;
+}
+
+/* Flip directional icons */
+html[dir="rtl"] .breadcrumb i.fa-chevron-right,
+html[dir="rtl"] .footer-links i.fa-chevron-right { transform: scaleX(-1); }
+
+html[dir="rtl"] .btn i.fa-arrow-right,
+html[dir="rtl"] .btn-link i.fa-arrow-right,
+html[dir="rtl"] .nav-list i.fa-chevron-down { /* keep chevron-down as-is */ }
+
+html[dir="rtl"] .btn i.fa-arrow-right { transform: scaleX(-1); }
+html[dir="rtl"] .btn-link i.fa-arrow-right { transform: scaleX(-1); }
+html[dir="rtl"] .btn-link:hover { gap: 0.7rem; }
+
+/* Mirror borders / accents that read left-to-right */
+html[dir="rtl"] .section-eyebrow {
+    padding-left: 0;
+    padding-right: 28px;
+}
+html[dir="rtl"] .section-eyebrow::before {
+    left: auto;
+    right: 0;
+}
+
+html[dir="rtl"] .footer h4::after {
+    left: auto;
+    right: 0;
+}
+
+html[dir="rtl"] .service-card::before {
+    left: auto;
+    right: 0;
+}
+
+html[dir="rtl"] .mv-card::before { left: 0; right: 0; } /* full-width — fine */
+
+html[dir="rtl"] .legal-content .updated {
+    border-left: none;
+    border-right: 4px solid var(--np-gold);
+}
+
+html[dir="rtl"] .legal-content ul { padding-left: 0; padding-right: 1.5rem; }
+
+/* Forms — RTL labels */
+html[dir="rtl"] .form-group label,
+html[dir="rtl"] .station-search label { text-align: right; }
+html[dir="rtl"] .form-group input,
+html[dir="rtl"] .form-group select,
+html[dir="rtl"] .form-group textarea,
+html[dir="rtl"] .station-search input,
+html[dir="rtl"] .station-search select,
+html[dir="rtl"] .newsletter-form input { text-align: right; }
+
+/* Newsletter form: keep button on the trailing side */
+html[dir="rtl"] .newsletter-form { flex-direction: row; }
+
+/* Mobile drawer slides in from the LEFT in RTL */
+html[dir="rtl"] .mobile-drawer-inner {
+    right: auto;
+    left: 0;
+    transform: translateX(-100%);
+}
+html[dir="rtl"] .mobile-drawer.open .mobile-drawer-inner {
+    transform: translateX(0);
+}
+html[dir="rtl"] .mobile-drawer-close { right: auto; left: 1rem; }
+
+/* Station-item slide hover direction flip */
+html[dir="rtl"] .station-item:hover { transform: translateX(-6px); }
+
+/* Footer links arrow on hover */
+html[dir="rtl"] .footer-links a:hover { padding-left: 0; padding-right: 6px; }
+html[dir="rtl"] .footer-links i { margin-right: 0; margin-left: 6px; }
+
+/* Top-bar info icons spacing */
+html[dir="rtl"] .top-bar-info span i { margin-right: 0; margin-left: 0.4rem; }
+
+/* Contact info row — mirror */
+html[dir="rtl"] .contact-row i,
+html[dir="rtl"] .contact-info-row i { margin-right: 0; margin-left: 0; }
+
+/* Timeline — flip side */
+html[dir="rtl"] .timeline {
+    padding-left: 0;
+    padding-right: 2.5rem;
+}
+html[dir="rtl"] .timeline::before {
+    left: auto;
+    right: 12px;
+}
+html[dir="rtl"] .timeline-item::before {
+    left: auto;
+    right: -2.5rem;
+}
+
+/* Chairman quote mark */
+html[dir="rtl"] .chairman::before {
+    right: auto;
+    left: 30px;
+    transform: scaleX(-1);
+}
+
+/* FAQ details summary toggle */
+html[dir="rtl"] .faq-item summary { flex-direction: row; }
+
+/* Hero CTA + features in RTL */
+html[dir="rtl"] .hero-cta { justify-content: flex-start; }
+
+/* Lang switch — keep horizontal */
+html[dir="rtl"] .lang-switch { direction: ltr; }
+
+/* Investor ticker mini chart — keep LTR for chart values */
+html[dir="rtl"] .ticker-mini-chart { direction: ltr; }
+html[dir="rtl"] .ticker-price,
+html[dir="rtl"] .ticker-change,
+html[dir="rtl"] .ticker-meta div .v,
+html[dir="rtl"] .stat-number,
+html[dir="rtl"] .kpi-card .num,
+html[dir="rtl"] .intro-image-badge .num { direction: ltr; display: inline-block; }
+
+/* Financials table — number columns LTR */
+html[dir="rtl"] .financials-table .num { direction: ltr; display: inline-block; }
+html[dir="rtl"] .financials-table th,
+html[dir="rtl"] .financials-table td { text-align: right; }
+
+/* Brand sub letterspacing relax in arabic */
+html[dir="rtl"] .brand-text .brand-sub { letter-spacing: 0; }
+
+/* Service-card + product-card hover-line position in RTL */
+html[dir="rtl"] .service-card:hover::before { width: 4px; }
+
+/* Map iframes always LTR (map UI) */
+html[dir="rtl"] .station-map,
+html[dir="rtl"] .full-map { direction: ltr; }

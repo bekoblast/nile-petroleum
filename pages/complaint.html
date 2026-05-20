@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Management | Nile Petroleum Company Limited</title>
+    <link rel="icon" type="image/png" href="../images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/pages.css">
+    <link rel="stylesheet" href="../css/features.css">
+    <link rel="stylesheet" href="../css/rtl.css">
+</head>
+<body>
+
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-info"><span><i class="fas fa-phone"></i> +249 183 777 777</span><span><i class="fas fa-envelope"></i> info@nilepet.sd</span></div>
+        <div class="top-bar-actions"><a href="careers.html"><i class="fas fa-briefcase"></i> Careers</a><a href="contact.html"><i class="fas fa-life-ring"></i> Support</a><div class="lang-switch"><button data-lang="en" class="active">EN</button><button data-lang="ar">عربي</button></div></div>
+    </div>
+</div>
+
+<nav class="navbar">
+    <div class="container">
+        <a class="brand" href="../index.html"><img src="../images/logo.png" alt=""><span class="brand-text"><span class="brand-name">Nile Petroleum</span><span class="brand-sub">Company Limited</span></span></a>
+        <ul class="nav-list">
+            <li><a class="nav-link" href="../index.html">Home</a></li>
+            <li><a class="nav-link" href="about.html">About Us</a></li>
+            <li><a class="nav-link" href="services.html">Services</a></li>
+            <li><a class="nav-link" href="products.html">Products</a></li>
+            <li><a class="nav-link" href="fuel-stations.html">Fuel Stations</a></li>
+            <li><a class="nav-link" href="hse-esg.html">HSE &amp; ESG</a></li>
+            <li><a class="nav-link" href="investor-relations.html">Investors</a></li>
+            <li><a class="nav-link" href="news.html">News</a></li>
+            <li><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-cta"><a href="#" class="nav-search" id="open-search" aria-label="Search"><i class="fas fa-search"></i></a><button class="nav-toggle"><i class="fas fa-bars"></i></button></div>
+    </div>
+</nav>
+
+<div class="mobile-drawer">
+    <div class="mobile-drawer-inner">
+        <button class="mobile-drawer-close"><i class="fas fa-times"></i></button>
+        <ul><li><a href="../index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="products.html">Products</a></li><li><a href="fuel-stations.html">Fuel Stations</a></li><li><a href="hse-esg.html">HSE &amp; ESG</a></li><li><a href="investor-relations.html">Investors</a></li><li><a href="news.html">News</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li></ul>
+    </div>
+</div>
+
+<section class="page-hero">
+    <div class="container">
+        <div class="breadcrumb"><a href="../index.html">Home</a> <i class="fas fa-chevron-right"></i> <span>Complaint Management</span></div>
+        <h1>Complaint Management</h1>
+        <p>File a new complaint or track an existing one. All complaints are handled by our dedicated team and acknowledged within 24 hours. Full bilingual support (English and Arabic).</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <!-- TABS -->
+        <div class="feature-tabs" role="tablist">
+            <button class="active" data-panel="panel-file" role="tab"><i class="fas fa-pen"></i> File a New Complaint</button>
+            <button data-panel="panel-track" role="tab"><i class="fas fa-magnifying-glass"></i> Track Existing Complaint</button>
+        </div>
+
+        <!-- FILE PANEL -->
+        <div class="feature-panel active" id="panel-file" role="tabpanel">
+            <div class="complaint-form-wrap">
+                <h2>Submit a New Complaint</h2>
+                <p>Please fill in the details below. You will receive a tracking ID to monitor the status of your complaint.</p>
+
+                <form id="complaint-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="c-name">Full Name <span style="color:var(--np-red)">*</span></label>
+                            <input id="c-name" type="text" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="c-email">Email <span style="color:var(--np-red)">*</span></label>
+                            <input id="c-email" type="email" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="c-phone">Phone</label>
+                            <input id="c-phone" type="tel" placeholder="+249 …">
+                        </div>
+                        <div class="form-group">
+                            <label for="c-category">Category <span style="color:var(--np-red)">*</span></label>
+                            <select id="c-category" required>
+                                <option value="">Select a category…</option>
+                                <option>Service Quality</option>
+                                <option>Pricing</option>
+                                <option>Station Experience</option>
+                                <option>Product Issue</option>
+                                <option>Billing &amp; Accounts</option>
+                                <option>Environment / Safety Concern</option>
+                                <option>Staff Conduct</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="c-subject">Subject <span style="color:var(--np-red)">*</span></label>
+                        <input id="c-subject" type="text" placeholder="Brief subject of your complaint" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="c-description">Detailed Description <span style="color:var(--np-red)">*</span></label>
+                        <textarea id="c-description" placeholder="Please describe what happened, when, and where. Include any reference numbers or station IDs if relevant." required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Urgency Level <span style="color:var(--np-red)">*</span></label>
+                        <div class="urgency-options">
+                            <input type="radio" id="urgency-low" name="urgency" value="low">
+                            <label for="urgency-low"><i class="fas fa-circle-info"></i> Low</label>
+
+                            <input type="radio" id="urgency-med" name="urgency" value="med" checked>
+                            <label for="urgency-med"><i class="fas fa-triangle-exclamation"></i> Medium</label>
+
+                            <input type="radio" id="urgency-high" name="urgency" value="high">
+                            <label for="urgency-high"><i class="fas fa-circle-exclamation"></i> High</label>
+                        </div>
+                    </div>
+
+                    <div class="consent-row">
+                        <input type="checkbox" id="c-consent" required>
+                        <label for="c-consent">
+                            I consent to Nile Petroleum processing my personal information for the purpose of investigating and responding to this complaint, in accordance with the company's
+                            <a href="privacy.html" style="color:var(--np-red);font-weight:600;text-decoration:underline">Privacy Policy</a>.
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">
+                        Submit Complaint <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- TRACK PANEL -->
+        <div class="feature-panel" id="panel-track" role="tabpanel">
+            <div class="track-search">
+                <h2>Track Your Complaint</h2>
+                <p>Enter your complaint tracking ID below to view the current status and history.</p>
+                <form id="track-form">
+                    <div class="track-input-group">
+                        <input id="ticket-id" type="text" placeholder="NPC-2026-XXXXXX" required spellcheck="false" autocomplete="off">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-search"></i> Track
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div id="track-result"></div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="success-modal" role="dialog" aria-modal="true">
+    <div class="modal">
+        <div class="modal-icon"><i class="fas fa-check"></i></div>
+        <h3>Complaint Submitted Successfully</h3>
+        <p>Thank you. Your complaint has been recorded. Please save your tracking ID below — you'll need it to follow up.</p>
+        <div class="ticket-display">
+            <code id="generated-ticket-id">NPC-2026-XXXXXX</code>
+            <button class="copy-btn" id="copy-ticket"><i class="fas fa-copy"></i> Copy</button>
+        </div>
+        <p style="font-size:0.85rem;color:var(--np-gray-500)">We'll begin reviewing your complaint within 24 hours and contact you on your registered email.</p>
+        <div class="modal-actions">
+            <button class="btn btn-ghost" data-modal-close>Close</button>
+            <button class="btn btn-primary" id="modal-track-btn">Track Status <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand"><div class="brand-row"><img src="../images/logo.png" alt=""><h3>Nile Petroleum<small>Company Limited</small></h3></div><p>Sudan's national petroleum company.</p><div class="social-row"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-linkedin-in"></i></a><a href="#"><i class="fab fa-youtube"></i></a></div></div>
+            <div><h4>Quick Links</h4><div class="footer-links"><a href="about.html"><i class="fas fa-chevron-right"></i>About</a><a href="services.html"><i class="fas fa-chevron-right"></i>Services</a><a href="products.html"><i class="fas fa-chevron-right"></i>Products</a><a href="fuel-stations.html"><i class="fas fa-chevron-right"></i>Stations</a><a href="news.html"><i class="fas fa-chevron-right"></i>News</a><a href="careers.html"><i class="fas fa-chevron-right"></i>Careers</a></div></div>
+            <div><h4>Resources</h4><div class="footer-links"><a href="investor-relations.html"><i class="fas fa-chevron-right"></i>Investors</a><a href="hse-esg.html"><i class="fas fa-chevron-right"></i>HSE &amp; ESG</a><a href="faq.html"><i class="fas fa-chevron-right"></i>FAQ</a><a href="complaint.html"><i class="fas fa-chevron-right"></i>File a Complaint</a><a href="terms.html"><i class="fas fa-chevron-right"></i>Terms</a><a href="privacy.html"><i class="fas fa-chevron-right"></i>Privacy</a></div></div>
+            <div><h4>Stay Connected</h4><div class="contact-row"><i class="fas fa-location-dot"></i><span>Khartoum, Sudan</span></div><div class="contact-row"><i class="fas fa-phone"></i><span>+249 183 777 777</span></div><div class="contact-row"><i class="fas fa-envelope"></i><span>info@nilepet.sd</span></div><form class="newsletter-form" data-mock><input type="email" placeholder="Your email" required><button type="submit">Subscribe</button></form></div>
+        </div>
+        <div class="footer-bottom"><span>&copy; 2026 Nile Petroleum Company Limited.</span><div class="footer-bottom-links"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a></div></div>
+    </div>
+</footer>
+
+<script src="../js/i18n.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/complaint.js"></script>
+</body>
+</html>
