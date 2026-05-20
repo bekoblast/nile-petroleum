@@ -1,0 +1,22 @@
+# Friendly URLs for the main sections (200 = rewrite, URL stays clean)
+/about            /pages/about.html              200
+/services         /pages/services.html           200
+/products         /pages/products.html           200
+/stations         /pages/fuel-stations.html      200
+/fuel-stations    /pages/fuel-stations.html      200
+/news             /pages/news.html               200
+/careers          /pages/careers.html            200
+/investors        /pages/investor-relations.html 200
+/investor         /pages/investor-relations.html 200
+/hse              /pages/hse-esg.html            200
+/esg              /pages/hse-esg.html            200
+/sustainability   /pages/hse-esg.html            200
+/contact          /pages/contact.html            200
+/complaint        /pages/complaint.html          200
+/complaints       /pages/complaint.html          200
+/faq              /pages/faq.html                200
+/terms            /pages/terms.html              200
+/privacy          /pages/privacy.html            200
+
+# Fallback for unknown paths
+/*  /index.html  404
