@@ -656,12 +656,19 @@ p { color: var(--np-gray-700); }
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0); }
 }
+/* CSS-only fade-in: runs automatically on element render,
+   doesn't depend on JS adding .visible. If JS *does* run, the
+   IntersectionObserver still adds .visible (no-op now, kept for compat). */
 .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: all 0.7s cubic-bezier(.4,0,.2,1);
+    animation: fadeUp 0.7s cubic-bezier(.4,0,.2,1) both;
+    animation-delay: 0.05s;
 }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal.visible { /* JS may set this; CSS animation already shows the element */ }
+
+/* Honour reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .reveal { animation: none; opacity: 1; transform: none; }
+}
 
 @keyframes pulse-ring {
     0%   { box-shadow: 0 0 0 0 rgba(227,37,37,0.5); }
