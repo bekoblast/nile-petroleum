@@ -36,6 +36,13 @@
     injectScript(REL + 'js/interactive.js');
     injectScript(REL + 'js/articles.js');
 
+    // Only load Leaflet on pages that have an OpenStreetMap iframe
+    if (document.querySelector('iframe[src*="openstreetmap.org"]')) {
+        injectStylesheet('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+        injectScript('https://unpkg.com/leaflet@1.9.4/dist/leaflet.js');
+        injectScript(REL + 'js/map.js');
+    }
+
     /* ===========================================================
        1. INJECT ARABIC FONT (lazy — only when needed)
        =========================================================== */
