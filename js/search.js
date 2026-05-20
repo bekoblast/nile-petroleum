@@ -132,8 +132,10 @@
     /* We BUILD the overlay in English source strings, then ask main.js to re-translate.
        This way the i18n snapshot always holds English originals, so toggling EN↔AR works. */
     function refreshLanguage() {
-        if (window.__np_setLanguage) {
-            window.__np_setLanguage(window.__np_lang || 'en');
+        // Only re-translate when the active language actually requires it (AR).
+        // Calling setLanguage('en') would do a destructive innerHTML restore pass.
+        if (window.__np_setLanguage && window.__np_lang === 'ar') {
+            window.__np_setLanguage('ar');
         }
     }
 

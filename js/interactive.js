@@ -58,7 +58,7 @@
         empty.style.gridColumn = '1 / -1';
         empty.innerHTML = '<i class="fas fa-newspaper"></i><h4>No articles in this category</h4><p>Try selecting a different category.</p>';
         grid.appendChild(empty);
-        if (window.__np_setLanguage) window.__np_setLanguage(window.__np_lang || 'en');
+        if (window.__np_setLanguage && window.__np_lang === 'ar') window.__np_setLanguage('ar');
     }
     function hideNewsEmpty() {
         const e = document.getElementById('news-empty-msg');
@@ -149,7 +149,7 @@
                 empty.style.gridColumn = '1 / -1';
                 empty.innerHTML = '<i class="fas fa-map-pin"></i><h4>No stations match your filters</h4><p>Try adjusting your search criteria.</p>';
                 grid.appendChild(empty);
-                if (window.__np_setLanguage) window.__np_setLanguage(window.__np_lang || 'en');
+                if (window.__np_setLanguage && window.__np_lang === 'ar') window.__np_setLanguage('ar');
             }
         }
     }
@@ -337,7 +337,7 @@
             }, 1800);
         });
 
-        if (window.__np_setLanguage) window.__np_setLanguage(window.__np_lang || 'en');
+        if (window.__np_setLanguage && window.__np_lang === 'ar') window.__np_setLanguage('ar');
     }
 
     function openApplicationModal(title, meta) {
@@ -379,7 +379,7 @@
                 `).join('')}
             </div>
         `;
-        if (window.__np_setLanguage) window.__np_setLanguage(window.__np_lang || 'en');
+        if (window.__np_setLanguage && window.__np_lang === 'ar') window.__np_setLanguage('ar');
     }
 
     function escapeHtml(s) {
@@ -512,7 +512,7 @@
         }
 
         // Translate any newly added text
-        if (window.__np_setLanguage) window.__np_setLanguage(window.__np_lang || 'en');
+        if (window.__np_setLanguage && window.__np_lang === 'ar') window.__np_setLanguage('ar');
     }
 
     function generateStockData(n) {

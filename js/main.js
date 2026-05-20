@@ -200,10 +200,17 @@
         return 0;
     }
 
+    /* Skip elements that contain or ARE counter elements — touching their
+       innerHTML would detach the running counter span and freeze the count. */
+    function isCounterRelated(el) {
+        return el.hasAttribute('data-counter') || !!el.querySelector('[data-counter]');
+    }
+
     /* PRE-PASS: snapshot original innerHTML & placeholders BEFORE any translation,
        so subsequent restore-to-English uses true English source. */
     function snapshotOriginals() {
         document.querySelectorAll(TRANSLATABLE_SELECTOR).forEach((el) => {
+            if (isCounterRelated(el)) return;
             if (!el.hasAttribute('data-i18n-orig')) {
                 el.setAttribute('data-i18n-orig', el.innerHTML);
             }
@@ -225,6 +232,7 @@
 
     function translateOneToArabic(el) {
         if (!el.isConnected) return;
+        if (isCounterRelated(el)) return; // never touch counters
 
         // Strategy A: walk DIRECT text-node children. Preserves icons & inline tags.
         let translated = false;
@@ -250,8 +258,12 @@
 
     function restoreOneToEnglish(el) {
         if (!el.isConnected) return;
+        if (isCounterRelated(el)) return; // preserve running counter spans
         if (el.hasAttribute('data-i18n-orig')) {
-            el.innerHTML = el.getAttribute('data-i18n-orig');
+            const orig = el.getAttribute('data-i18n-orig');
+            if (el.innerHTML !== orig) {
+                el.innerHTML = orig;
+            }
         }
     }
 

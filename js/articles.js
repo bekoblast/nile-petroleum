@@ -218,7 +218,7 @@
                     </a>
                 </div>
             `;
-            if (window.__np_setLanguage) window.__np_setLanguage(window.__np_lang || 'en');
+            if (window.__np_setLanguage && window.__np_lang === 'ar') window.__np_setLanguage('ar');
             return;
         }
 
@@ -287,7 +287,7 @@
         `;
 
         // Re-translate for current language
-        if (window.__np_setLanguage) window.__np_setLanguage(window.__np_lang || 'en');
+        if (window.__np_setLanguage && window.__np_lang === 'ar') window.__np_setLanguage('ar');
     }
 
     function formatDate(iso) {
