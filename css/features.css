@@ -527,6 +527,103 @@
 }
 .search-shortcuts a:hover { background: var(--np-red); color: var(--np-white); }
 
+/* ── ARTICLE DETAIL PAGE ──────────────────── */
+.article-detail {
+    background: var(--np-white);
+    padding-bottom: 2rem;
+}
+.article-header {
+    margin-bottom: 2rem;
+}
+.article-header .chip {
+    margin-bottom: 1.2rem;
+}
+.article-header h1 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    line-height: 1.2;
+    margin-bottom: 1.2rem;
+    color: var(--np-navy);
+}
+.article-meta {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    color: var(--np-gray-500);
+    font-size: 0.9rem;
+}
+.article-meta span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.article-meta i { color: var(--np-red); }
+
+.article-hero {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    box-shadow: var(--shadow);
+}
+.article-hero img {
+    width: 100%;
+    aspect-ratio: 21/9;
+    object-fit: cover;
+}
+
+.article-body {
+    max-width: 720px;
+    margin: 0 auto;
+}
+.article-body p {
+    color: var(--np-gray-900);
+    font-size: 1.08rem;
+    line-height: 1.85;
+    margin-bottom: 1.4rem;
+}
+.article-body p:first-of-type {
+    font-size: 1.18rem;
+    color: var(--np-navy);
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+.article-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    margin: 2.5rem 0;
+    border-top: 1px solid var(--np-gray-100);
+    border-bottom: 1px solid var(--np-gray-100);
+}
+.article-share {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.article-share a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--np-gray-100);
+    color: var(--np-gray-700);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--t-fast);
+    font-size: 0.95rem;
+}
+.article-share a:hover {
+    background: var(--np-red);
+    color: var(--np-white);
+    transform: translateY(-2px);
+}
+
+.article-related {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--np-gray-100);
+}
+
 /* RTL adjustments for these components */
 html[dir="rtl"] .ticket-display code { text-align: right; }
 html[dir="rtl"] .timeline-step { direction: rtl; }
