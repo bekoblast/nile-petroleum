@@ -38,7 +38,7 @@
             category: 'Sustainability',
             categoryColor: 'green',
             readTime: '5 min read',
-            image: 'https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1600&q=80',
+            image: 'https://images.unsplash.com/photo-1581094288338-2314dddb7ece?w=1600&q=80',
             excerpt: 'Renewable energy integration cuts grid dependency and supports 24/7 service in remote regions.',
             body: [
                 'Nilepet announced today the launch of a year-long solar pilot programme covering 25 strategically located fuel stations across five states. Each pilot site will be equipped with rooftop photovoltaic systems and battery storage.',
