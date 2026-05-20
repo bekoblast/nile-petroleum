@@ -10,12 +10,23 @@ desktop.ini
 .vscode/
 .idea/
 *.swp
+*.swo
 
-# Node
+# Node (docx-builder dependencies, not the site)
 node_modules/
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 .env
 .env.local
 
-# Local-only docs
+# Bid materials & proposal tooling — local-only, not deployed
 *.docx
+*.pdf
+/build_proposal.js
+/package.json
+/package-lock.json
+
+# Original logo source files (the live one is at images/logo.png)
+/logo.jpg
+/logo.png
