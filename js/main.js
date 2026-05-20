@@ -93,36 +93,50 @@
     }
 
     /* ===========================================================
-       5. COUNTERS
+       5. COUNTERS — animate on view, with a fallback so they always
+       run even if IntersectionObserver doesn't fire for some reason.
        =========================================================== */
+    function animateCounter(el) {
+        if (el.dataset.counted === '1') return;
+        el.dataset.counted = '1';
+        const target = parseFloat(el.dataset.counter);
+        if (Number.isNaN(target)) return;
+        const decimals = (el.dataset.counter.split('.')[1] || '').length;
+        const duration = 1600;
+        const start = performance.now();
+        const step = (now) => {
+            const p = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - p, 3);
+            const value = target * eased;
+            el.textContent = value.toLocaleString('en-US', {
+                minimumFractionDigits: decimals,
+                maximumFractionDigits: decimals,
+            });
+            if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+    }
+
     const counters = document.querySelectorAll('[data-counter]');
-    if ('IntersectionObserver' in window && counters.length) {
-        const co = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((e) => {
-                    if (!e.isIntersecting) return;
-                    const el = e.target;
-                    const target = parseFloat(el.dataset.counter);
-                    const decimals = (el.dataset.counter.split('.')[1] || '').length;
-                    const duration = 1600;
-                    const start = performance.now();
-                    const step = (now) => {
-                        const p = Math.min((now - start) / duration, 1);
-                        const eased = 1 - Math.pow(1 - p, 3);
-                        const value = target * eased;
-                        el.textContent = (value).toLocaleString('en-US', {
-                            minimumFractionDigits: decimals,
-                            maximumFractionDigits: decimals,
-                        });
-                        if (p < 1) requestAnimationFrame(step);
-                    };
-                    requestAnimationFrame(step);
-                    co.unobserve(el);
-                });
-            },
-            { threshold: 0.4 }
-        );
-        counters.forEach((c) => co.observe(c));
+    if (counters.length) {
+        if ('IntersectionObserver' in window) {
+            const co = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((e) => {
+                        if (e.isIntersecting) {
+                            animateCounter(e.target);
+                            co.unobserve(e.target);
+                        }
+                    });
+                },
+                { threshold: 0.25 }
+            );
+            counters.forEach((c) => co.observe(c));
+        }
+        // Safety net: after 800ms, animate any counters that haven't run yet
+        // (covers the case where the observer never fires — e.g. if the element
+        // is above the fold or the page is short enough that no scroll happens).
+        setTimeout(() => counters.forEach(animateCounter), 800);
     }
 
     /* ===========================================================
