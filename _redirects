@@ -17,6 +17,3 @@
 /faq              /pages/faq.html                200
 /terms            /pages/terms.html              200
 /privacy          /pages/privacy.html            200
-
-# Fallback for unknown paths
-/*  /index.html  404

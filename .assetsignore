@@ -1,0 +1,32 @@
+# Files in the repo that should NOT be deployed as public assets
+# (Cloudflare Workers Static Assets honours this file just like .gitignore)
+
+# Git internals
+.git/
+.gitignore
+.gitattributes
+
+# Wrangler build artefacts
+.wrangler/
+wrangler.toml
+wrangler.jsonc
+
+# Project metadata / dev tooling
+README.md
+package.json
+package-lock.json
+node_modules/
+build_proposal.js
+
+# Local-only docs
+*.docx
+*.pdf
+
+# Source logo files (live logo is at images/logo.png)
+/logo.jpg
+/logo.png
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
