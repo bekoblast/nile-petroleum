@@ -31,7 +31,8 @@
         s.setAttribute('data-np-injected', src);
         document.head.appendChild(s);
     }
-    injectStylesheet(REL + 'css/features.css');
+    // features.css is now loaded statically via <link> in every HTML head
+    // to prevent FOUC on first load. Only scripts are injected here.
     injectScript(REL + 'js/search.js');
     injectScript(REL + 'js/interactive.js');
     injectScript(REL + 'js/articles.js');
