@@ -30,3 +30,9 @@ yarn-error.log*
 # Original logo source files (the live one is at images/logo.png)
 /logo.jpg
 /logo.png
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
