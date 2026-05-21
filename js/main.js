@@ -83,6 +83,12 @@
 
     /* ===========================================================
        4. SCROLL REVEAL
+       Elements with `.reveal` start hidden (CSS) and become visible
+       when they scroll into view. Observed at 12% threshold so the
+       fade fires just before the element fully enters the viewport.
+
+       Safety net: after 4 s, force-reveal anything still hidden so
+       the page can never end up blank if the observer misfires.
        =========================================================== */
     const revealEls = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window && revealEls.length) {
@@ -95,10 +101,17 @@
                     }
                 });
             },
-            { threshold: 0.12 }
+            { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
         );
         revealEls.forEach((el) => io.observe(el));
+    } else {
+        // No IntersectionObserver support — show everything immediately
+        revealEls.forEach((el) => el.classList.add('visible'));
     }
+    // Fail-safe: nothing should ever stay hidden for more than 4 s
+    setTimeout(() => {
+        document.querySelectorAll('.reveal:not(.visible)').forEach((el) => el.classList.add('visible'));
+    }, 4000);
 
     /* ===========================================================
        5. COUNTERS — animate on view, with a fallback so they always
